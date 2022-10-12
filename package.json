@@ -1,0 +1,19 @@
+{
+  "name": "mercato-show-api",
+  "version": "1.0.0",
+  "description": "mercato-api",
+  "main": "api.js",
+  "author": "MarshMallowFR",
+  "license": "ISC",
+  "scripts": {
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "netlify-lambda": "^2.0.15",
+    "serverless-http": "^3.0.3",
+    "dotenv": "^16.0.1"
+  }
+}
