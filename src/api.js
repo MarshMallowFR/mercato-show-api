@@ -27,7 +27,10 @@ router.get('/users/:id/tweets', async (req, res) => {
     const result = await api(
       `${twitterBaseUrl}/users/${id}/tweets${tweetsParams}`,
     );
-    res.status(200).json({ result: result.data });
+    res
+      .header({ 'Access-Control-Allow-Origin': '*' })
+      .status(200)
+      .json({ result: result.data });
   } catch (error) {
     res.status(500).json({ error });
   }
