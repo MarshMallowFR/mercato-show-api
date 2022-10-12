@@ -27,8 +27,7 @@ router.get('/users/:id/tweets', async (req, res) => {
     const result = await api(
       `${twitterBaseUrl}/users/${id}/tweets${tweetsParams}`,
     );
-    console.log(result);
-    res.status(200).json({ result: 'toto' });
+    res.status(200).json({ result: result.data });
   } catch (error) {
     res.status(500).json({ error });
   }
