@@ -5,8 +5,6 @@ functions = "functions"
   to="/.netlify/functions/api/:splat"
   from="/*"
   status=200
-  force = true
-  headers = {X-From = "Netlify"}
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.

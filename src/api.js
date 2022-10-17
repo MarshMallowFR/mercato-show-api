@@ -50,4 +50,6 @@ app.use(function (_, res, next) {
 });
 
 module.exports = app;
-module.exports.handler = serverless(app);
+module.exports.handler = serverless(app, {
+  headers: { 'Access-Control-Allow-Origin': '*' },
+});
