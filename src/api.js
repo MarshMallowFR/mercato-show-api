@@ -41,7 +41,7 @@ router.get('/users/:id/tweets', async (req, res) => {
 });
 
 app.use(`/`, router);
-app.use(cors);
+app.use(cors());
 
 module.exports = app;
 module.exports.handler = serverless(app);
