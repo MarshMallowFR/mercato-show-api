@@ -6,6 +6,7 @@ require('dotenv/config');
 
 const app = express();
 const router = express.Router();
+app.use(cors());
 
 const twitterBaseUrl = 'https://api.twitter.com/2';
 const tweetsParams =
@@ -41,7 +42,6 @@ router.get('/users/:id/tweets', async (req, res) => {
 });
 
 app.use(`/`, router);
-app.use(cors());
 
 module.exports = app;
 module.exports.handler = serverless(app);
