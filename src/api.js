@@ -23,6 +23,7 @@ const api = async (url, options = {}) => {
 
 router.get('/users/:id/tweets', async (req, res) => {
   try {
+    console.log('totot');
     const { id } = req.params;
     const result = await api(
       `${twitterBaseUrl}/users/${id}/tweets${tweetsParams}`,
