@@ -2,7 +2,6 @@ const axios = require('axios');
 const express = require('express');
 const serverless = require('serverless-http');
 require('dotenv/config');
-const headers = require('./intermediate/headers).headers');
 
 const app = express();
 const router = express.Router();
@@ -29,7 +28,12 @@ router.get('/users/:id/tweets', async (req, res) => {
     const result = await api(
       `${twitterBaseUrl}/users/${id}/tweets${tweetsParams}`,
     );
-    res.header(headers).status(200).json({ result: result.data });
+    res
+      .header({
+        'Access-Control-Allow-Origin': '*',
+      })
+      .status(200)
+      .json({ result: result.data });
   } catch (error) {
     res.status(500).json({ error });
   }
