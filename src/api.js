@@ -1,6 +1,7 @@
 const axios = require('axios');
 const express = require('express');
 const serverless = require('serverless-http');
+const cors = require('cors');
 require('dotenv/config');
 
 const app = express();
@@ -40,16 +41,7 @@ router.get('/users/:id/tweets', async (req, res) => {
 });
 
 app.use(`/`, router);
-app.use(function (_, res, next) {
-  res.header('Access-Control-Allow-Origin', '*'); // update to match the domain you will make the request from
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept',
-  );
-  next();
-});
+app.use(cors);
 
 module.exports = app;
-module.exports.handler = serverless(app, {
-  headers: { 'Access-Control-Allow-Origin': '*' },
-});
+module.exports.handler = serverless(app);
