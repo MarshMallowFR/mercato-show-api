@@ -18,7 +18,7 @@ const tweeterHeaders = {
 
 const authorIds = [
   '330262748', // Fabrizio Romano
-  '145684236', // Vincent Duluc
+  '871395668', // Hugo Guillemet
 ];
 
 const api = async (url, options = {}) => {
