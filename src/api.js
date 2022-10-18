@@ -10,7 +10,7 @@ app.use(cors());
 
 const twitterBaseUrl = 'https://api.twitter.com/2';
 const tweetsParams =
-  '?tweet.fields=author_id%2Cattachments%2Cid%2Ccreated_at&max_results=50&media.fields=alt_text%2Cheight%2Curl&user.fields=name%2Cprofile_image_url%2Cusername%2Cverified&expansions=attachments.media_keys%2Cauthor_id&exclude=replies%2Cretweets';
+  '?tweet.fields=author_id%2Cattachments%2Cid%2Ccreated_at&max_results=20&media.fields=alt_text%2Cheight%2Curl&user.fields=name%2Cprofile_image_url%2Cusername%2Cverified&expansions=attachments.media_keys%2Cauthor_id&exclude=replies%2Cretweets';
 
 const tweeterHeaders = {
   Authorization: `Bearer ${process.env.API_BEARER_TOKEN}`,
@@ -18,7 +18,9 @@ const tweeterHeaders = {
 
 const authorIds = [
   '330262748', // Fabrizio Romano
-  '871395668', // Hugo Guillemet
+  // '871395668', // Hugo Guillemet
+  '29716398', // John Cross
+  '46875124', // David Ornstein
 ];
 
 const api = async (url, options = {}) => {
