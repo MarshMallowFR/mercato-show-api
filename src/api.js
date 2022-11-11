@@ -21,6 +21,7 @@ const authorIds = [
   // '871395668', // Hugo Guillemet
   '29716398', // John Cross
   '46875124', // David Ornstein
+  '26759984', // Guillem Ballague
 ];
 
 const api = async (url, options = {}) => {
